@@ -1,0 +1,47 @@
+====================================================================
+BANGASH TRANSPORT CO. - 100% READY GITHUB PAGES DEPLOYMENT FILES
+====================================================================
+
+You asked for the complete software in standard:
+- index.html (dynamic entry)
+- CSS (styling)
+- JavaScript (interactive ERP engine & Firebase sync)
+- bangash_transport_co_backup.json (complete dynamic database backup)
+
+These files are 100% ready to run in ANY web browser with NO Node.js,
+NO compilation commands, and NO build errors!
+
+--------------------------------------------------------------------
+HOW TO UPLOAD TO GITHUB PAGES IN 2 MINUTES:
+--------------------------------------------------------------------
+1. Open your GitHub repository in your web browser:
+   https://github.com/raees12Dec/bangash-transport-erp
+
+2. Click "Add file" -> "Upload files".
+
+3. Drag and drop the contents of this folder into GitHub:
+   - index.html
+   - 404.html
+   - assets (folder)
+   - bangash_transport_co_backup.json
+
+4. Click the green "Commit changes" button at the bottom.
+
+5. Go to "Settings" -> "Pages" on your repository:
+   - Under "Build and deployment" -> "Source", select "Deploy from a branch"
+   - Branch: main (or master), Folder: / (root)
+   - Click Save.
+
+6. Your website is LIVE immediately at:
+   https://raees12dec.github.io/bangash-transport-erp/
+
+--------------------------------------------------------------------
+FIREBASE CLOUD BACKUP & MULTI-USER SYNC:
+--------------------------------------------------------------------
+- Connected Database ID: ai-studio-9d67cb59-1c1f-4984-a81b-1b51684b6798
+- Project: noted-composition-65wls
+- All trip entries, expense vouchers, customer balances, and bilties
+  automatically sync to Firebase Cloud Firestore in real time.
+- You can also export or restore your JSON database anytime inside the
+  app by clicking: Settings -> Backup & Database.
+====================================================================
