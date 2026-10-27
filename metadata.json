@@ -1,0 +1,6 @@
+{
+  "name": "Bangash Transport Co - Cloud Logistics",
+  "description": "Cloud-based transport management system for daily cargo entries, bilty generation, fleet tracking, and ledger accounting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

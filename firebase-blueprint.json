@@ -1,0 +1,160 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account for multi-login staff members",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "username": { "type": "string", "maxLength": 64 },
+        "fullName": { "type": "string", "maxLength": 128 },
+        "role": { "type": "string", "maxLength": 64 },
+        "title": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "format": "email", "maxLength": 128 },
+        "department": { "type": "string", "maxLength": 128 },
+        "avatarBg": { "type": "string", "maxLength": 64 },
+        "pin": { "type": "string", "maxLength": 16 },
+        "status": { "type": "string", "maxLength": 32 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "username", "fullName", "role"]
+    },
+    "Trip": {
+      "title": "Trip",
+      "description": "Freight trip operations record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "tripNumber": { "type": "string", "maxLength": 64 },
+        "tripDate": { "type": "string", "maxLength": 32 },
+        "customerId": { "type": "string", "maxLength": 128 },
+        "customerCompanyName": { "type": "string", "maxLength": 128 },
+        "vehicleNumber": { "type": "string", "maxLength": 64 },
+        "driverName": { "type": "string", "maxLength": 128 },
+        "startingLocation": { "type": "string", "maxLength": 128 },
+        "destinationLocation": { "type": "string", "maxLength": 128 },
+        "goodsDescription": { "type": "string", "maxLength": 256 },
+        "totalFreightAmount": { "type": "number" },
+        "advanceReceived": { "type": "number" },
+        "outstandingFreightAmount": { "type": "number" },
+        "status": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "tripNumber", "tripDate", "customerId", "status"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Shipper / consignee customer master profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "companyName": { "type": "string", "maxLength": 128 },
+        "customerType": { "type": "string", "maxLength": 64 },
+        "contactPerson": { "type": "string", "maxLength": 128 },
+        "mobile": { "type": "string", "maxLength": 64 },
+        "email": { "type": "string", "maxLength": 128 },
+        "city": { "type": "string", "maxLength": 64 },
+        "openingBalance": { "type": "number" },
+        "creditLimit": { "type": "number" },
+        "active": { "type": "boolean" },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "companyName"]
+    },
+    "Invoice": {
+      "title": "Invoice",
+      "description": "Freight billing invoice",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "invoiceNumber": { "type": "string", "maxLength": 64 },
+        "invoiceDate": { "type": "string", "maxLength": 32 },
+        "customerId": { "type": "string", "maxLength": 128 },
+        "customerName": { "type": "string", "maxLength": 128 },
+        "totalInvoiceAmount": { "type": "number" },
+        "paidAmount": { "type": "number" },
+        "remainingBalance": { "type": "number" },
+        "paymentStatus": { "type": "string", "maxLength": 32 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "invoiceNumber", "customerId", "paymentStatus"]
+    },
+    "CashBankTransaction": {
+      "title": "CashBankTransaction",
+      "description": "Receipts, payments, and settlements journal record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "voucherNumber": { "type": "string", "maxLength": 64 },
+        "date": { "type": "string", "maxLength": 32 },
+        "type": { "type": "string", "maxLength": 32 },
+        "category": { "type": "string", "maxLength": 64 },
+        "amount": { "type": "number" },
+        "accountId": { "type": "string", "maxLength": 128 },
+        "accountName": { "type": "string", "maxLength": 128 },
+        "postedBy": { "type": "string", "maxLength": 128 },
+        "description": { "type": "string", "maxLength": 512 }
+      },
+      "required": ["id", "voucherNumber", "date", "type", "amount"]
+    },
+    "CompanySettings": {
+      "title": "CompanySettings",
+      "description": "Company profile, branding, and system numbering settings",
+      "type": "object",
+      "properties": {
+        "companyName": { "type": "string", "maxLength": 128 },
+        "phone": { "type": "string", "maxLength": 64 },
+        "email": { "type": "string", "maxLength": 128 },
+        "currencySymbol": { "type": "string", "maxLength": 16 },
+        "authorizedSignatoryName": { "type": "string", "maxLength": 128 },
+        "authorizedSignatoryTitle": { "type": "string", "maxLength": 128 },
+        "showOfficialStamp": { "type": "boolean" },
+        "adminPin": { "type": "string", "maxLength": 16 }
+      },
+      "required": ["companyName"]
+    },
+    "ERPCloudSync": {
+      "title": "ERPCloudSync",
+      "description": "Full cloud enterprise dataset sync document for high-volume daily records",
+      "type": "object",
+      "properties": {
+        "datasetId": { "type": "string", "maxLength": 128 },
+        "updatedAt": { "type": "string", "maxLength": 64 },
+        "updatedBy": { "type": "string", "maxLength": 128 },
+        "entryCount": { "type": "number" },
+        "status": { "type": "string", "maxLength": 32 }
+      },
+      "required": ["datasetId", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/erp_users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Staff login profiles and role permissions"
+    },
+    "/erp_trips/{tripId}": {
+      "schema": "Trip",
+      "description": "Trip records"
+    },
+    "/erp_customers/{customerId}": {
+      "schema": "Customer",
+      "description": "Customer accounts"
+    },
+    "/erp_invoices/{invoiceId}": {
+      "schema": "Invoice",
+      "description": "Freight invoices"
+    },
+    "/erp_transactions/{transactionId}": {
+      "schema": "CashBankTransaction",
+      "description": "Customer receipts and cash/bank vouchers"
+    },
+    "/erp_settings/{settingId}": {
+      "schema": "CompanySettings",
+      "description": "System and company configuration"
+    },
+    "/erp_cloud_data/{documentId}": {
+      "schema": "ERPCloudSync",
+      "description": "Enterprise cloud database repository"
+    }
+  }
+}
